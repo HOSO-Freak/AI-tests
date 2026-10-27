@@ -59,3 +59,7 @@ with torch.no_grad(): # Не считаем градиенты при тесте
         correct += (predicted == target).sum().item()
 
 print(f"\nТочность на тестовых данных: {100 * correct / total:.2f}%")
+
+# СОХРАНЕНИЕ МОДЕЛИ
+torch.save(model.state_dict(), "digit_model.pth")
+print("Модель сохранена в digit_model.pth")
